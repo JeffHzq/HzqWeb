@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>隔壁老韩のBlog</title>
+    {% load staticfiles %}
+    <link rel="stylesheet"
+          href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'custom/css/base.css' %}">
+    <script src="{% static 'jquery/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body class="base">
+<div class="container">
+    <div class="row">
+        <img class="col-xs-1 col-md-1 blog_logo" src="{% static 'images/blog_logo.png' %}">
+        <h1 class="col-xs-4 col-md-4">隔壁老韩のBlog</h1>
+        <h3 class="col-xs-4 col-md-4">
+            <ul class="nav navbar-nav">
+                <li role="presentation" class="active"><a href="#">博客</a></li>
+                <li role="presentation"><a href="#">关于我</a></li>
+                <li role="presentation"><a href="#">和我联系</a></li>
+            </ul>
+        </h3>
+        <form class="navbar-form navbar-right blog_search_form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="请输入关键字">
+                <div class="input-group-addon blog_search glyphicon glyphicon-search"></div>
+            </div>
+        </form>
+
+    </div>
+    <div class="row">
+        <div class="blog_sidebar col-md-3">
+            <h3 class="row">博客分类</h3>
+            <ul>
+                <li>人生感悟</li>
+                <li>旅行日记</li>
+                <li>电影推荐</li>
+                <li>美食分享</li>
+            </ul>
+            <hr/>
+            <h3 class="row">关于我</h3>
+            <img class="col-md-12 blog_self_img" src="{% static 'images/self.jpg' %}">
+            <span>
+                        <p>姓名: 隔壁老韩</p>
+                        <p>生日: 1991-05-25</p>
+                        <p>星座: 双子座</p>
+                        <p>城市: 杭州</p>
+                        <p>职业: 测试开发工程师</p>
+                        <p>爱好: 跑步</p>
+                </span>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-9">
+            <div class="blog_content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<footer class="modal-footer container blog_footer">
+    <p class="text-center">
+        © 2017 隔壁老韩's Blog 版权所有
+    </p>
+</footer>
+{% block script %}
+{% endblock %}
+</html>
