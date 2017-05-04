@@ -15,65 +15,106 @@
             crossorigin="anonymous"></script>
 </head>
 <body class="base">
-<div class="container">
+<div class="container blog_container">
     <div class="row">
-        <img class="col-xs-1 col-md-1 blog_logo" src="{% static 'images/blog_logo.png' %}">
-        <h1 class="col-xs-4 col-md-4">隔壁老韩のBlog</h1>
-        <h3 class="col-xs-4 col-md-4">
-            <ul class="nav navbar-nav">
-                <li role="presentation" class="active"><a href="#">博客</a></li>
-                <li role="presentation"><a href="#">关于我</a></li>
-                <li role="presentation"><a href="#">和我联系</a></li>
+        <img class="col-xs-3 col-md-3 blog_logo" src="{% static 'images/onepiece_logo.jpg' %}">
+        <h2 class="col-xs-2 col-md-2" style="display: table-cell; vertical-align: middle; ">隔壁老韩のBlog</h2>
+        <h4 class="col-xs-6 col-md-6" style="display: table-cell; vertical-align: middle; ">
+            <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" class="active"><a href="#">首页</a></li>
+                <li role="presentation"><a href="#">旅行</a></li>
+                <li role="presentation"><a href="#">心情</a></li>
+                <li role="presentation"><a href="#">美食</a></li>
+                <li role="presentation"><a href="#">关于</a></li>
+                <li role="presentation"><a href="#">联系</a></li>
             </ul>
-        </h3>
-        <form class="navbar-form navbar-right blog_search_form" role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="请输入关键字">
-                <div class="input-group-addon blog_search glyphicon glyphicon-search"></div>
-            </div>
-        </form>
-
+        </h4>
     </div>
+    <hr/>
     <div class="row">
-        <div class="blog_sidebar col-md-3">
-            <h3 class="row">博客分类</h3>
-            <ul>
-                <li>人生感悟</li>
-                <li>旅行日记</li>
-                <li>电影推荐</li>
-                <li>美食分享</li>
-            </ul>
-            <hr/>
-            <h3 class="row">关于我</h3>
-            <img class="col-md-12 blog_self_img" src="{% static 'images/self.jpg' %}">
-            <span>
-                        <p>姓名: 隔壁老韩</p>
-                        <p>生日: 1991-05-25</p>
-                        <p>星座: 双子座</p>
-                        <p>城市: 杭州</p>
-                        <p>职业: 测试开发工程师</p>
-                        <p>爱好: 跑步</p>
-                </span>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-xs-9">
             <div class="blog_content">
                 {% block content %}
                 {% endblock %}
             </div>
         </div>
+        <div class="blog_sidebar col-md-3 col-xs-3">
+            <div class="gray_background">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入关键字">
+                        <div class="input-group-addon blog_search glyphicon glyphicon-search"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="gray_background">
+                <span class="row blog_title">关于我</span>
+                <img class="col-md-12 col-xs-12 blog_self_img" src="{% static 'images/self.jpg' %}">
+                <span>
+                        <p>姓名: 隔壁老韩</p>
+                        <p>生日: 1991-05-25</p>
+                        <p>星座: 双子座</p>
+                        <p>城市: 杭州</p>
+                        <p>爱好: 跑步</p>
+                </span>
+            </div>
+            <div class="gray_background">
+                <table class="table table-condensed">
+                  <thead><span class="blog_title">最新文章</span></thead>
+                    <tr>
+                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
+                        <th>那些与美食有关的事儿</th>
+                    </tr>
+                    <tr>
+                        <td class="blog_time">发布日期：2015-08-11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
+                        <th>那些与美食有关的事儿</th>
+                    </tr>
+                    <tr>
+                        <td class="blog_time">发布日期：2015-08-11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
+                        <th>那些与美食有关的事儿</th>
+                    </tr>
+                    <tr>
+                        <td class="blog_time">发布日期：2015-08-11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
+                        <th>那些与美食有关的事儿</th>
+                    </tr>
+                    <tr>
+                        <td class="blog_time">发布日期：2015-08-11</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
+                        <th>那些与美食有关的事儿</th>
+                    </tr>
+                    <tr>
+                        <td class="blog_time">发布日期：2015-08-11</td>
+                    </tr>
+                </table>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
     </div>
 
 </div>
 
 </body>
 <footer class="modal-footer container blog_footer">
-    <p class="text-center">
-        © 2017 隔壁老韩's Blog 版权所有
-    </p>
+    <div class="text-center">
+        <p>隔壁老韩's Blog - 记录小人物的故事</p>
+        <p>Copyright © 2016 - 2017 有家软件有限公司</p>
+    </div>
 </footer>
 {% block script %}
 {% endblock %}

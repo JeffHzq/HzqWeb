@@ -1,47 +1,65 @@
 
 .base{
-    background-color: rgb(197, 223, 197);
+    background: #e5e5e5 none no-repeat fixed center top;
+    background-size: cover;
 }
 
-.blog_logo{
+.gray_background{
+    background: #e5e5e5 none no-repeat fixed center top;
+    background-size: cover;
+    padding: 10px;
     margin-bottom: 20px;
 }
 
-.blog_sidebar{
-    background-color: white;
+.blog_title{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 微软雅黑;
+    font-style: italic;
 }
 
-.blog_content{
-    background-color: white;
-    padding: 20px;
-}
-
-.blog_footer{
+.blog_container{
     margin-top: 20px;
-}
-
-.blog_search_form{
-    margin-top: 20px;
-}
-
-.blog_search{
-    background-color: #d58512;
-}
-
-.blog_self_img{
-    margin-top: 10px;
-    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px 40px;
 }
 
 .blog_time{
-    text-align: right;
+    color: #686868;
+    font-size: 12px;
+    line-height: 12px;
 }
 
 .blog_carousel{
     margin-bottom: 40px;
 }
 
-h3{
-    padding-left: 10px;
-    color: rgb(197, 223, 197);
+.blog_brief{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+footer {
+    background: #474747 none repeat center top;
+    border-top: 1px solid #474747;
+    margin-bottom: 20px;
+}
+
+.blog_footer{
+    word-spacing: normal;
+    color: white;
+    font-family: "微软雅黑", Helvetica, Arial, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.blog_search{
+    background-color: white;
+}
+
+.blog_self_img{
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
