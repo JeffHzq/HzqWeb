@@ -17,28 +17,28 @@
 <body class="base">
 <div class="container blog_container">
     <div class="row">
-        <img class="col-xs-3 col-md-3 blog_logo" src="{% static 'images/onepiece_logo.jpg' %}">
+        <a href="/"><img class="col-xs-3 col-md-3 blog_logo" src="{% static 'images/onepiece_logo.jpg' %}"></a>
         <h2 class="col-xs-2 col-md-2" style="display: table-cell; vertical-align: middle; ">隔壁老韩のBlog</h2>
         <h4 class="col-xs-6 col-md-6" style="display: table-cell; vertical-align: middle; ">
             <ul class="nav navbar-nav navbar-right">
-                <li role="presentation" class="active"><a href="#">首页</a></li>
-                <li role="presentation"><a href="#">旅行</a></li>
-                <li role="presentation"><a href="#">心情</a></li>
-                <li role="presentation"><a href="#">美食</a></li>
-                <li role="presentation"><a href="#">关于</a></li>
-                <li role="presentation"><a href="#">联系</a></li>
+                <li role="presentation" class="active"><a href="/">首页</a></li>
+                <li role="presentation"><a href="/blog/">博客</a></li>
+                <li role="presentation"><a href="/photo/">照片</a></li>
+                <li role="presentation"><a href="/func/">功能</a></li>
+                <li role="presentation"><a href="/about/">关于</a></li>
+                <li role="presentation"><a href="/relation/">联系</a></li>
             </ul>
         </h4>
     </div>
     <hr/>
     <div class="row">
-        <div class="col-md-9 col-xs-9">
-            <div class="blog_content">
-                {% block content %}
-                {% endblock %}
+        {% block content %}
+            <div class="col-md-9 col-xs-12">
             </div>
-        </div>
-        <div class="blog_sidebar col-md-3 col-xs-3">
+        {% endblock %}
+        {% block sidebar%}
+
+        <div class="blog_sidebar col-md-3 col-xs-12">
             <div class="gray_background">
                 <form class="navbar-form" role="search">
                     <div class="input-group">
@@ -60,7 +60,7 @@
             </div>
             <div class="gray_background">
                 <table class="table table-condensed">
-                  <thead><span class="blog_title">最新文章</span></thead>
+                    <thead><span class="blog_title">最新文章</span></thead>
                     <tr>
                         <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
                         <th>那些与美食有关的事儿</th>
@@ -105,6 +105,8 @@
             <br>
         </div>
 
+        {% endblock %}
+
     </div>
 
 </div>
@@ -115,7 +117,19 @@
         <p>隔壁老韩's Blog - 记录小人物的故事</p>
         <p>Copyright © 2016 - 2017 喂自己袋盐</p>
     </div>
+    <div class="back-to-top" id="toTop"> Back to top </div>
 </footer>
+<script type="text/javascript">
+    $(function(){
+        $("#toTop").click(function(){
+            $("html").animate({"scrollTop": "0px"},1000); //IE,FF
+            $("body").animate({"scrollTop": "0px"},1000); //Webkit
+        });
+    })
+</script>
 {% block script %}
+{% endblock %}
+{% block external %}
+
 {% endblock %}
 </html>
