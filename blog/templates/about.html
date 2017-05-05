@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="row">
+        <img class="img-circle col-md-offset-3 col-md-6 col-xs-12" src="{% static 'images/self.jpg' %}">
+        <h2 class="col-md-12 col-xs-12" style="text-align: center">关于</h2>
+        <div class="col-md-12 col-xs-12">
+            <p style="text-indent:21pt;">
+                一个90后迷途青年！14年毕业，从业已经有3年。从迷茫的应届毕业小白到做软件测试再到测试开发最后到如今的应用软件开发工程师。一路磕磕碰碰，接触了不少计算机方面的知识，成就了现在啥都懂一些，但啥都不是很精通的我。
+            </p>
+            <p style="text-indent:21pt;">
+                毕业那会的初衷是要励志当一名程序猿，但是那时候会的太少，大公司门槛高。小公司面试通过，但最后在抉择的时候选择了大公司(大华)的软件测试岗位，想通过内部转岗方式再做开发。于是乎做黑盒测试做了1年，也是挺充实的一年，这一年通过工作需要学习了Linux, MySQL, C++方面的知识,分分钟可以把一套安防系统搭建到Linux环境下的板卡上保证正常运行，并且用C++写了一个模拟球机的测试工具(人生中第一个测试工具)。
+            </p>
+            <p style="text-indent:21pt;">
+                第二年，跳到了海康威视(原因就不说了), 做了一年的算法测试，一年的工具开发。期间接触了目前最高大上的领域---机器学习。我的工作主要就是测试算法库的性能是否满足需求, 一边测试还要一边写测试用的工具, 主要用Qt写工具，也用Java和python写。基本就是需要用到什么就用什么写。后来工具需求多了，就转成了专写工具的应用软件开发工程师。业务包含了测试工具，标定工具，数据管理平台工具(大大小小工具写了几十个...有时候1天写1个工具)。几乎就是围绕着深度学习开展的工具。
+            </p>
+            <p style="text-indent:21pt;">
+                转了一大圈，我还是没有放弃自己的初衷，毕业那会学的是J2EE开发，对做web开发情有独钟，还是想从事web开发相关岗位。本博客就是为了学习Django而制作的。
+            </p>
+        </div>
+        <div class="col-md-offset-3 col-md-6 col-xs-12">
+            <hr/>
+            <h4 style="text-align: center">
+                <p>有时并不是因为看到了希望才去坚持，</p>
+                <p> 而是坚持了才会看到希望。</p>
+                <p>- 某位名人 -</p>
+            </h4>
+            <hr/>
+        </div>
+    </div>
+{% endblock %}
+{% block sidebar %}
+{% endblock %}

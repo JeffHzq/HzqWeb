@@ -1,0 +1,14 @@
+.photo{
+    padding: 0px;
+    text-align: center;
+}
+
+.photo img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.photo span{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

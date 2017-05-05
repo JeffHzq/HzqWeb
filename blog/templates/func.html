@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="col-md-4 col-xs-12 func">
+        <a><img data-toggle="tooltip" data-placement="top" title="人脸检测" src="{% static 'images/facedetect.jpg' %}" class="col-md-12 col-xs-12"></a>
+    </div>
+    <div class="col-md-4 col-xs-12 func">
+        <a><img data-toggle="tooltip" data-placement="top" title="天气预报" src="{% static 'images/weather.jpg' %}" class="col-md-12 col-xs-12"></a>
+    </div>
+    <div class="col-md-4 col-xs-12 func">
+        <a><img data-toggle="tooltip" data-placement="top" title="2048" src="{% static 'images/2048.png' %}" class="col-md-12 col-xs-12"></a>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block external %}
+    <link rel="stylesheet" href="{% static 'custom/css/func.css' %}">
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+{% endblock %}
