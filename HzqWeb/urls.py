@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from blog.views import home
+from blog.views import *
 import settings
 
 urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/$', blog, name='blog'),
+    url(r'^photo/$', photo, name='photo'),
+    url(r'^func/$', func, name='func'),
+    url(r'^about/$', about, name='about'),
+    url(r'^relation/$', relation, name='relation'),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
 ]
 
