@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load custom_markdown %}
+{% block content %}
+    <div class="col-md-9 col-xs-12">
+        <div class="blog_content">
+            <div class="col-md-12 col-xs-12 blog_content_title">
+                {{ blog.title }}
+            </div>
+            <div class="col-md-12 col-xs-12" style="margin: 10px;">
+                <span class="blog_time">发布日期：{{ blog.create_time | date:'Y-m-d' }} 分类：</span><a href="/blog?type={{ blog.type_id }}">{{ blog.type }}</a>
+            </div>
+            <div class="col-md-12 col-xs-12" style="margin: 10px;">
+                {% autoescape off %}
+                    {{ blog.content|custom_markdown2 }}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block sidebar %}
+    {{ block.super }}
+{% endblock %}

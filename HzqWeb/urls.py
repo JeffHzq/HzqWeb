@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """HzqWeb URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,21 +16,24 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from blog.views import *
+from blog.views.views import *
 import settings
 
 urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/$', blog, name='blog'),
+    url(r'^blog/$', 'blog.views.blogviews.blog', name='blog'),
     url(r'^photo/$', photo, name='photo'),
     url(r'^func/$', func, name='func'),
     url(r'^about/$', about, name='about'),
     url(r'^relation/$', relation, name='relation'),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
+    url(r'^blog/(?P<blog_id>[0-9]+)$', 'blog.views.blogviews.content', name='content'),
 ]
 
 if settings.DEBUG:
     urlpatterns += (url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-                    url(r'^static/(?P<path>.*)$','django.views.static.serve', {'document_root': settings.STATIC_ROOT}))
+                    url(r'^static/(?P<path>.*)$','django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
+
+urlpatterns += (url(r'^', blog404, name='blog404'),) # 这个必须要放最后面，否则后面路径全部无效
 
