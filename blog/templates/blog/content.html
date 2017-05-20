@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% load custom_markdown %}
 {% block content %}
+
     <div class="col-md-9 col-xs-12">
         <div class="blog_content">
             <div class="col-md-12 col-xs-12 blog_content_title">
@@ -12,7 +13,7 @@
             </div>
             <div class="col-md-12 col-xs-12" style="margin: 10px;">
                 {% autoescape off %}
-                    {{ blog.content|custom_markdown2 }}
+                    {{ blog.content|custom_markdown }}
                 {% endautoescape %}
             </div>
         </div>

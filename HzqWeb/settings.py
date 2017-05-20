@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'HzqWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hzqweb',
+        'USER': 'root',
+        'PASSWORD': '874066778Bd!',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
