@@ -17,7 +17,7 @@
     {% endblock %}
 </head>
 <body class="base">
-<div class="container blog_container">
+<div class="blog_container col-sm-12 col-xs-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
     <div class="row">
         <a href="/"><img class="col-xs-3 col-md-3 blog_logo" src="{% static 'images/onepiece_logo.jpg' %}"></a>
         <h2 class="col-xs-7 col-md-2" style="display: table-cell; vertical-align: middle; ">隔壁老韩のBlog</h2>
@@ -33,15 +33,20 @@
         </h4>
         <div class="btn-group col-xs-12 col-sm-12 visible-xs visible-sm">
             <hr>
-            <button type="button" class="btn btn-default dropdown-toggle col-xs-12 col-sm-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-lg btn-default dropdown-toggle col-xs-12 col-sm-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 菜单栏 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu col-xs-12 col-sm-12">
-                <li role="presentation" class="active"><a href="/">首页</a></li>
+                <li role="presentation"><a href="/">首页</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="/blog">博客</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="/photo/">照片</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="/func/">功能</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="/about/">关于</a></li>
+                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="/relation/">联系</a></li>
             </ul>
         </div>
@@ -88,7 +93,7 @@
 </div>
 
 </body>
-<footer class="modal-footer container blog_footer">
+<footer class="modal-footer container blog_footer col-sm-12 col-xs-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
     <div class="text-center">
         <p>隔壁老韩's Blog - 记录小人物的故事</p>
         <p>Copyright © 2016 - 2017 喂自己袋盐</p>
