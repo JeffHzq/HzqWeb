@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'custom/css/home.css' %}">
+{% endblock %}
 {% block content %}
     <div class="col-md-9 col-xs-12">
 
@@ -8,22 +11,39 @@
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             </ol>
 
+
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="{% static 'images/roll_3.jpg' %}" alt="演示图片1">
-                    <div class="carousel-caption">
-                        演示图片1
+            <div class="carousel-inner blog_listbox" role="listbox">
+                {% for blog in blogs|slice:":3" %}
+                    <div class="item {% if forloop.counter == 1 %}active{% endif %}">
+                        <a href="/blog/{{ blog.id }}"><img style="height: 300px;width: 100%" src="{{ MEDIA_URL }}{{ blog.ico }}" alt="{{ blog.title }}"></a>
+                        <div class="carousel-caption">
+                            <h3>{{ blog.title }}</h3>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{% static 'images/roll_4.jpg' %}" alt="演示图片2">
-                    <div class="carousel-caption">
-                        演示图片2
+                {% empty %}
+                    <div class="item active">
+                        <img src="{% static 'images/roll_3.jpg' %}" alt="演示图片1">
+                        <div class="carousel-caption">
+                            演示图片1
+                        </div>
                     </div>
-                </div>
+                    <div class="item">
+                        <img src="{% static 'images/roll_4.jpg' %}" alt="演示图片2">
+                        <div class="carousel-caption">
+                            演示图片2
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{% static 'images/roll_2.jpg' %}" alt="演示图片3">
+                        <div class="carousel-caption">
+                            演示图片3
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
 
             <!-- Controls -->

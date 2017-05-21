@@ -1,13 +1,27 @@
-from django.shortcuts import render
-from django.http import Http404
+from django.shortcuts import render, render_to_response
+from django.http import Http404, HttpResponse
 from blog.models import *
+from django.views.decorators.http import require_GET, require_POST
+import json
+from django.core.serializers import serialize
 
-def home(request):
-    if request.method == 'GET':
+@require_GET
+def get_blogs(request):
+    try:
         blogs = Blog.objects.order_by("-create_time").all()[:5]
-        return render(request, 'home.html', {'blogs': blogs})
-    else:
-        raise Http404
+        # jsondata = json.dumps(list(blogs))
+        jsondata = serialize('json', blogs, ensure_ascii=False)
+    except Exception, e:
+        print e.message
+    return HttpResponse(jsondata, content_type="application/json")
+
+@require_GET
+def home(request):
+    try:
+        blogs = Blog.objects.order_by("-create_time").all()[:5]
+    except Exception, e:
+        print e.message
+    return render(request, 'home.html', {'blogs': blogs})
 
 def photo(request):
     return render(request, 'photo.html')

@@ -13,24 +13,38 @@
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+    {% block head %}
+    {% endblock %}
 </head>
 <body class="base">
 <div class="container blog_container">
     <div class="row">
         <a href="/"><img class="col-xs-3 col-md-3 blog_logo" src="{% static 'images/onepiece_logo.jpg' %}"></a>
-        <h2 class="col-xs-2 col-md-2" style="display: table-cell; vertical-align: middle; ">隔壁老韩のBlog</h2>
-        <h4 class="col-xs-6 col-md-6" style="display: table-cell; vertical-align: middle; ">
+        <h2 class="col-xs-7 col-md-2" style="display: table-cell; vertical-align: middle; ">隔壁老韩のBlog</h2>
+        <h4 class="col-md-6 col-lg-6 visible-md visible-lg" style="display: table-cell; vertical-align: middle; ">
             <ul class="nav navbar-nav navbar-right">
                 <li role="presentation" class="active"><a href="/">首页</a></li>
-                <li role="presentation"><a href="/blog/">博客</a></li>
+                <li role="presentation"><a href="/blog">博客</a></li>
                 <li role="presentation"><a href="/photo/">照片</a></li>
                 <li role="presentation"><a href="/func/">功能</a></li>
                 <li role="presentation"><a href="/about/">关于</a></li>
                 <li role="presentation"><a href="/relation/">联系</a></li>
             </ul>
         </h4>
+        <div class="btn-group col-xs-12 col-sm-12 visible-xs visible-sm">
+            <hr>
+            <button type="button" class="btn btn-default dropdown-toggle col-xs-12 col-sm-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                菜单栏 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu col-xs-12 col-sm-12">
+                <li role="presentation" class="active"><a href="/">首页</a></li>
+                <li role="presentation"><a href="/blog">博客</a></li>
+                <li role="presentation"><a href="/photo/">照片</a></li>
+                <li role="presentation"><a href="/func/">功能</a></li>
+                <li role="presentation"><a href="/about/">关于</a></li>
+                <li role="presentation"><a href="/relation/">联系</a></li>
+            </ul>
+        </div>
     </div>
     <hr/>
     <div class="row">
@@ -40,72 +54,32 @@
         {% endblock %}
         {% block sidebar%}
 
-        <div class="blog_sidebar col-md-3 col-xs-12">
-            <div class="gray_background">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="请输入关键字">
-                        <div class="input-group-addon blog_search glyphicon glyphicon-search"></div>
-                    </div>
-                </form>
-            </div>
-            <div class="gray_background">
-                <span class="row title">关于我</span>
-                <img class="col-md-12 col-xs-12 blog_self_img" src="{% static 'images/self.jpg' %}">
-                <span>
+            <div class="blog_sidebar col-md-3 col-xs-12">
+                <div class="gray_background">
+                    <form class="navbar-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="请输入关键字">
+                            <div class="input-group-addon blog_search glyphicon glyphicon-search"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="gray_background">
+                    <span class="row title">关于我</span>
+                    <img class="col-md-12 col-xs-12 blog_self_img" src="{% static 'images/self.jpg' %}">
+                    <span>
                         <p>姓名: 隔壁老韩</p>
                         <p>生日: 1991-05-25</p>
                         <p>星座: 双子座</p>
                         <p>城市: 杭州</p>
                         <p>爱好: 跑步</p>
                 </span>
+                </div>
+                <div class="gray_background" id="last_blogs"></div>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
-            <div class="gray_background">
-                <table class="table table-condensed">
-                    <thead><span class="title">最新文章</span></thead>
-                    <tr>
-                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
-                        <th>那些与美食有关的事儿</th>
-                    </tr>
-                    <tr>
-                        <td class="blog_time">发布日期：2015-08-11</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
-                        <th>那些与美食有关的事儿</th>
-                    </tr>
-                    <tr>
-                        <td class="blog_time">发布日期：2015-08-11</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
-                        <th>那些与美食有关的事儿</th>
-                    </tr>
-                    <tr>
-                        <td class="blog_time">发布日期：2015-08-11</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
-                        <th>那些与美食有关的事儿</th>
-                    </tr>
-                    <tr>
-                        <td class="blog_time">发布日期：2015-08-11</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2"><img src="{% static 'images/demo_img.jpg' %}"></td>
-                        <th>那些与美食有关的事儿</th>
-                    </tr>
-                    <tr>
-                        <td class="blog_time">发布日期：2015-08-11</td>
-                    </tr>
-                </table>
-            </div>
-
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
 
         {% endblock %}
 
@@ -127,8 +101,23 @@
             $("html").animate({"scrollTop": "0px"},1000); //IE,FF
             $("body").animate({"scrollTop": "0px"},1000); //Webkit
         });
+
+        $.ajax({
+            url:'/get_blogs/',
+            type: 'GET',
+            success: function (data) {
+                var blogs_html = "<table class='table table-condensed'><thead><span class='title'>最新文章</span></thead>";
+                var media_url = '{{ MEDIA_URL }}';
+                for (index in data){
+                    blogs_html +=   "<tr><td rowspan='2' class='col-xs-5 col-md-5 new_blog_td'><img src='" + media_url + data[index].fields.ico + "'></td>" +
+                        "<th class='col-xs-7 col-md-7'><a href='/blog/" + data[index].pk + "'>" + data[index].fields.title + "</a></th>" +
+                        "</tr><tr><td class='blog_time'>发布日期：" + data[index].fields.create_time.substr(0, 10) + "</td></tr>";
+                }
+                blogs_html += "</table>";
+                $('#last_blogs').html(blogs_html);
+            }
+        })
     })
-    hljs.initHighlightingOnLoad();
 </script>
 {% block script %}
 {% endblock %}

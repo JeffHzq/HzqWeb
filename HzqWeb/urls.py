@@ -21,14 +21,15 @@ import settings
 
 urlpatterns = [
     url(r'^$', home, name='home'),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/$', 'blog.views.blogviews.blog', name='blog'),
+    url(r'^hzq/', include(admin.site.urls)),
+    url(r'^blog$', 'blog.views.blogviews.blog', name='blog'),
     url(r'^photo/$', photo, name='photo'),
     url(r'^func/$', func, name='func'),
     url(r'^about/$', about, name='about'),
     url(r'^relation/$', relation, name='relation'),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
     url(r'^blog/(?P<blog_id>[0-9]+)$', 'blog.views.blogviews.content', name='content'),
+    url(r'^get_blogs/$', 'blog.views.views.get_blogs', name='get_blogs'),
 ]
 
 if settings.DEBUG:

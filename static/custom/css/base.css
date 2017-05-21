@@ -85,3 +85,21 @@ footer {
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
+p{
+    white-space:pre-wrap;
+}
+
+.new_blog_td {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.new_blog_td img {
+    width: 100%;
+}
+
+a{
+    color: black;
+}
