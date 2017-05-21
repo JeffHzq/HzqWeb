@@ -22,7 +22,7 @@ class Blog(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
     modify_time = models.DateTimeField(auto_now=True)
     ico = models.ImageField(null=True, upload_to="icos/", default="icos/ico_default.jpg")
-    tags = TagField()
+    tags = TagField(default=[])
 
     def __str__(self):
         return self.title
